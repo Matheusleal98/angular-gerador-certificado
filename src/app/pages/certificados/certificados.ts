@@ -9,5 +9,4 @@ import { ItemCertificado } from '../../_components/item-certificado/item-certifi
   styleUrl: './certificados.css',
 })
 export class Certificados {
-
 }
