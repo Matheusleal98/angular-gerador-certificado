@@ -2,14 +2,22 @@
   background-color: #fff;
   padding: 1rem 2rem;
   border-bottom: 1px solid #E2E8F0;
+  padding-right: 28px;
+  padding-left: 12px;
 }
 
 .navbar-logo img {
   height: 40px;
 }
 
+.nav-link {
+  padding: 6px !important;
+  margin-left: 18px !important;
+}
+
 .active {
   color: #3B5AC2;
+  font-weight: 600;
 }
 
 .nav-link.active {
