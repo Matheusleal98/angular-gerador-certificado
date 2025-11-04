@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormsModule, type NgControl, type NgForm } from '@angular/forms';
+import { FormsModule, NgControl, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 
 import { PrimaryButton } from '../../_components/primary-button/primary-button';
 import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
@@ -24,7 +25,7 @@ export class CertificadoForm {
     dataEmissao: ''
   };
 
-  constructor(private certificadoService: CertificadoService) {}
+  constructor(private certificadoService: CertificadoService, private route: Router) {}
   @ViewChild('form') form!: NgForm;
 
   validarCampo(control: NgControl) {
@@ -51,8 +52,11 @@ export class CertificadoForm {
     this.certificado.dataEmissao = this.dataAtual();
     this.certificado.id = uuidv4();
     this.certificadoService.adicionarCertificado(this.certificado);
-    this.certificado = this.estadoInicialCertificado();
-    this.form.resetForm();
+
+    this.route.navigate(['certificados', this.certificado.id]);
+
+    // this.certificado = this.estadoInicialCertificado();
+    // this.form.resetForm();
   }
 
   dataAtual(){

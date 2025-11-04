@@ -13,7 +13,7 @@ import { CertificadoService } from '../../_services/certificado-service';
 export class Certificado implements OnInit {
 
   id: string | null = null;
-  certificado: any;
+  certificado: any | undefined;
 
   constructor(private certificadoService: CertificadoService, private route: ActivatedRoute){}
  
