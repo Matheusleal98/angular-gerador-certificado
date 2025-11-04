@@ -1,59 +1,97 @@
-# GeradorCertificado
+# 🏆 Gerador de Certificados Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+O **Gerador de Certificados Angular** é uma aplicação desenvolvida com o objetivo de **praticar conceitos fundamentais e avançados do framework Angular**, incluindo **componentização, navegação, manipulação de dados com LocalStorage** e **geração dinâmica de arquivos para download**.  
 
-## Development server
+A aplicação permite **criar, visualizar e armazenar certificados personalizados**, simulando um sistema simples de gestão de certificados, ideal para portfólios e aprendizado prático.
 
-To start a local development server, run:
+---
+
+## 🚀 Tecnologias
+
+### 🧩 Stack Principal
+
+- **Framework:** Angular 20  
+- **Linguagem:** TypeScript  
+- **Estilização:** Bootstrap 5  
+- **Geração de ID:** [uuid](https://www.npmjs.com/package/uuid)  
+- **Geração e Download de Certificados:** [Canvas2](https://www.npmjs.com/package/canvas2)  
+- **Armazenamento Local:** LocalStorage (persistência de certificados gerados)
+
+---
+
+## 💡 Funcionalidades Implementadas
+
+### 📜 Certificados
+- ✍️ **Gerar novo certificado** informando **nome** e **atividade**  
+- 🧾 **Listar certificados gerados** (histórico salvo no navegador via LocalStorage)  
+- 👀 **Visualizar certificado** completo, com nome e descrição  
+- ⬇️ **Baixar certificado em imagem** usando **Canvas2**  
+
+### 🧭 Navegação
+- 🔄 Navegação entre telas implementada com **Angular Router**  
+- 💾 Salvamento automático de certificados no navegador  
+- 🧹 Possibilidade de limpar ou atualizar o histórico  
+
+---
+
+## 🧱 Estrutura de Telas
+
+| Tela | Descrição |
+|------|------------|
+| **Página inicial** | Exibe o histórico de certificados gerados |
+| **/certificados/novo** | Permite criar um novo certificado informando nome e atividade |
+| **/certificados/:id** | Mostra o certificado completo e permite fazer download |
+
+---
+
+## 🛠️ Ambiente de Desenvolvimento
+
+### 🔧 Pré-requisitos
+
+- Node.js 18+  
+- Angular CLI 20+  
+
+---
+
+## ⚙️ Configuração Inicial
+
+### Clonar o repositório
+
+```bash
+git clone https://github.com/Matheusleal98/angular-gerador-certificado.git
+cd angular-gerador-certificado
+```
+### Instalar dependências
+
+```bash
+npm install
+```
+
+### ▶️ Executar o Projeto
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Acesse no navegador:
+👉 http://localhost:4200
 
-## Code scaffolding
+### 💾 Armazenamento de Dados
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Os certificados são salvos localmente no navegador via **LocalStorage**, permitindo que o histórico seja mantido entre as sessões. 
+#### Cada certificado contém:
 
-```bash
-ng generate component component-name
-```
+- ID único (gerado com uuid)
+- Nome do participante
+- Atividade
+- Data emissão
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### 🎯 Objetivo do Projeto
 
-```bash
-ng generate --help
-```
+Este projeto foi desenvolvido com foco em **prática e aprendizado de Angular**, explorando:
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Rotas e componentes
+- Injeção de dependências e serviços
+- Manipulação de DOM e Canvas
+- Integração com bibliotecas externas
+- Persistência de dados no LocalStorage
