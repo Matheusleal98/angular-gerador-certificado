@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, type OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { Navbar } from './_components/navbar/navbar';
 import { Base } from './_components/base/base';
+import  { CertificadoService } from './_services/certificado-service';
 
 
 
@@ -13,6 +14,14 @@ import { Base } from './_components/base/base';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
   protected readonly title = signal('gerador-certificado');
+
+  constructor(private certificadoService: CertificadoService){}
+
+  ngOnInit(): void {
+    const certificados = localStorage.getItem('certificados');
+    this.certificadoService.certificados = certificados ? JSON.parse(certificados) : [];
+    console.log(this.certificadoService.certificados);
+  }
 }
