@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
+import { Component, type OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
+import { SecondaryButton } from '../../_components/secondary-button/secondary-button';
+import { CertificadoService } from '../../_services/certificado-service';
 
 @Component({
   selector: 'app-certificado',
@@ -8,6 +10,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './certificado.html',
   styleUrl: './certificado.css',
 })
-export class Certificado {
+export class Certificado implements OnInit {
 
+  constructor(private certificadoService: CertificadoService){}
+ 
+  ngOnInit(): void {
+    console.log(this.certificadoService.certificados);
+  }
 }
